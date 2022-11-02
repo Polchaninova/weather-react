@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Weather from "./Weather";
+import "./App.css";
+import City from "./City";
 
 function App() {
+  let city = "Kharkov";
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+        <h1>Hello React from {city}</h1>
+        <Weather city="Kharkov" />
+        <City />
         <a
-          className="App-link"
-          href="https://reactjs.org"
+          href="https://www.shecodes.io/learn/workshops/941/units/74/lessons/293"
           target="_blank"
+          without
           rel="noopener noreferrer"
         >
-          Learn React
+          SheCodes
         </a>
       </header>
     </div>
   );
 }
-
 export default App;
