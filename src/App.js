@@ -1,26 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import Weather from "./Weather";
 import "./App.css";
-import City from "./City";
+import SearchCity from "./SearchCity";
 
-function App() {
-  let city = "Kharkov";
+export default function App() {
+  const [city, setCity] = useState("");
+  function onHandleSearch(city) {
+    setCity(city);
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Hello React from {city}</h1>
-        <Weather city="Kharkov" />
-        <City />
-        <a
-          href="https://www.shecodes.io/learn/workshops/941/units/74/lessons/293"
-          target="_blank"
-          without
-          rel="noopener noreferrer"
-        >
-          SheCodes
-        </a>
-      </header>
+      <h1 className="App-text">Weather App</h1>
+      <SearchCity onSearch={onHandleSearch} />
+      <Weather city={city} />
     </div>
   );
 }
-export default App;
